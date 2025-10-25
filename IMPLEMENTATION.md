@@ -43,6 +43,15 @@ constants.ts         - Game configuration (physics, dimensions, colors)
 types.ts            - TypeScript interfaces for game objects
 supabaseClient.ts   - Supabase client configuration
 supabase-schema.sql - Database schema for leaderboard table
+index.ts            - Expo entry point
+app.json            - Expo app configuration
+package.json        - Dependencies and scripts
+tsconfig.json       - TypeScript configuration
+README.md           - Setup and usage instructions
+IMPLEMENTATION.md   - Technical documentation
+.env.example        - Environment variables template
+.gitignore          - Git ignore rules
+assets/             - App icons and splash screens
 ```
 
 ### Game Loop
@@ -105,7 +114,7 @@ The `leaderboard` table includes:
 ## Platform Support
 - **iOS**: Full support
 - **Android**: Full support
-- **Web**: Possible with additional dependencies (react-dom, react-native-web)
+- **Web**: Supported via Expo SDK ~54 (requires installing react-dom and react-native-web with `npx expo install react-dom react-native-web`)
 
 ## Performance Optimizations
 - Uses `useRef` for values that update frequently (velocity, position)
@@ -133,6 +142,6 @@ The `leaderboard` table includes:
    - Leaderboard displays (if Supabase configured)
 
 ## Known Limitations
-- Supabase integration requires manual setup (URL and keys)
-- Sound effects infrastructure in place but no actual sound files
-- Web platform requires additional dependencies
+- Supabase integration requires manual setup (URL and keys in environment variables)
+- Sound effects infrastructure in place but no actual sound files included
+- Web platform requires installing additional dependencies: `npx expo install react-dom react-native-web`
