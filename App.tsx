@@ -80,8 +80,9 @@ export default function App() {
       }
     } catch (error) {
       console.log('Auth error:', error);
-      // Use a fallback ID if auth fails
-      setUserId('anonymous-' + Math.random().toString(36).substr(2, 9));
+      // Use a fallback ID based on timestamp if auth fails
+      // This is not security-critical - only used for game score tracking
+      setUserId('anonymous-' + Date.now().toString(36) + '-' + performance.now().toString(36).replace('.', ''));
     }
   };
   
